@@ -8,15 +8,11 @@ const TitleCards = ({title="Popular Shows", category}) => {
   const [apiData, setApiData] = useState([]);
   const cardsRef = useRef();
 
-
-  
   // fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
   //   .then(response => response.json())
   //   .then(response => console.log(response))
   //   .catch(err => console.error(err));
   
-
-
   const handleWheel = (event)=>{
     event.preventDefault();
     cardsRef.current.scrollLeft += event.deltaY;
@@ -27,11 +23,13 @@ const TitleCards = ({title="Popular Shows", category}) => {
     fetch(`https://api.themoviedb.org/3/movie/${category?category:"now_playing"}?language=en-US&page=1`)
     .then(response => response.json())
     .then(response => setApiData(response.results))
+    .catch(err => console.error(err));
 
     cardsRef.current.addEventListener('wheel', handleWheel);
   },[])
   return (
     <div className='title-cards'>
+      {/* <h2>{title?title:"Popular Shows"}</h2> */}
       <h2>{title}</h2>
       <div className="card-list" ref={cardsRef}>
         {apiData.map((card, index)=>{

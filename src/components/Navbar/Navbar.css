@@ -53,21 +53,17 @@
     background: #191919;
     padding: 18px 22px;
     border-radius: 2px;
-    text-decoration: none;
+    text-decoration: underline;
     z-index: 1;
     display: none;
-    
-    p{
-        font-size: 13px;
-        cursor: pointer;
-    }
 }
-
-
+.navbar .dropdown p{
+    font-size: 13px;
+    cursor: pointer;
+}
 .navbar-profile:hover .dropdown{
     display: block;
 }
-
 .nav-dark{
     background: #141414;
 }

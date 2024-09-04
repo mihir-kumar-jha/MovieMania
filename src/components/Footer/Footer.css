@@ -27,7 +27,7 @@
 
 @media (max-width:800px) {
     .footer-icons img{
-        width: 20px;
+        width: 25px;
     }
     .footer ul{
         grid-template-columns: auto auto;
